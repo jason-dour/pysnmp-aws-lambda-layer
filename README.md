@@ -28,11 +28,10 @@ This is why SNMP.  :)
 
     ``` shell
     $ ls -1 build
-    total 0
     build-pysnmp.sh
     ```
 
-1. Then execute the docker `lambci/lambda:python` images to run the build script.
+2. Then execute the docker `lambci/lambda:python` images to run the build script.
 
     ``` shell
     docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash lambci/lambda:python3.6 ./build-pysnmp.sh
