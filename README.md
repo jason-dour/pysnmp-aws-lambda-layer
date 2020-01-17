@@ -2,6 +2,14 @@
 
 AWS Lambda Layer for Python PySNMP module.
 
+## Why SNMP?!
+
+Because.
+
+To be more clear: because I needed it as a cloud guy who works hard to integrate on-premises infrastructure with cloud.  And SNMP is a reasonable way for a Lambda to extract information from decades of existing on-premises infrastructure.
+
+This is why SNMP.  :)
+
 ## Building the Layers
 
 1. Make certain you have the `lambci/lambda` Docker images needed to build the layers.
