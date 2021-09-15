@@ -31,14 +31,16 @@ This is why SNMP.  :)
     build-pysnmp.sh
     ```
 
-1. Then execute the docker `lambci/lambda:python` images to run the build script.
+1. Then execute the docker `public.ecr.aws/lambda/python` images to run the build script.
 
     ``` shell
-    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash lambci/lambda:python3.6 ./build-pysnmp.sh
+    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash public.ecr.aws/lambda/python:3.6 ./build-pysnmp.sh
 
-    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash lambci/lambda:python3.7 ./build-pysnmp.sh
+    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash public.ecr.aws/lambda/python:3.7 ./build-pysnmp.sh
 
-    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash lambci/lambda:python3.8 ./build-pysnmp.sh
+    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash public.ecr.aws/lambda/python:3.8 ./build-pysnmp.sh
+
+    docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash public.ecr.aws/lambda/python:3.9 ./build-pysnmp.sh
     ```
 
 ## Deploy the Layers
@@ -51,4 +53,6 @@ aws lambda publish-layer-version --layer-name "pysnmp-python36" --description "P
 aws lambda publish-layer-version --layer-name "pysnmp-python37" --description "PySNMP Module for Python 3.7 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.7" --zip-file "fileb://build/pysnmp-python3.7.zip"
 
 aws lambda publish-layer-version --layer-name "pysnmp-python38" --description "PySNMP Module for Python 3.8 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.8" --zip-file "fileb://build/pysnmp-python3.8.zip"
+
+aws lambda publish-layer-version --layer-name "pysnmp-python38" --description "PySNMP Module for Python 3.9 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.9" --zip-file "fileb://build/pysnmp-python3.9.zip"
 ```
