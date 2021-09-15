@@ -42,5 +42,5 @@ aws lambda publish-layer-version --layer-name "pysnmp-python37" --description "P
 
 aws lambda publish-layer-version --layer-name "pysnmp-python38" --description "PySNMP Module for Python 3.8 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.8" --zip-file "fileb://build/pysnmp-python3.8.zip"
 
-aws lambda publish-layer-version --layer-name "pysnmp-python38" --description "PySNMP Module for Python 3.9 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.9" --zip-file "fileb://build/pysnmp-python3.9.zip"
+aws lambda publish-layer-version --layer-name "pysnmp-python39" --description "PySNMP Module for Python 3.9 Runtime" --license-info "BSD-2-Clause" --compatible-runtimes "python3.9" --zip-file "fileb://build/pysnmp-python3.9.zip"
 ```
