@@ -12,18 +12,6 @@ This is why SNMP.  :)
 
 ## Building the Layers
 
-1. Make certain you have the `lambci/lambda` Docker images needed to build the layers.
-
-    ``` shell
-    $ docker images
-    REPOSITORY                                                    TAG                 IMAGE ID            CREATED             SIZE
-    lambci/lambda                                                 python3.8           36f0e1beec21        8 days ago          451MB
-    lambci/lambda                                                 python3.7           abf60b9bbe88        8 days ago          930MB
-    lambci/lambda                                                 python3.6           be7ca6842c9b        8 days ago          879MB
-    ```
-
-   1. If you do not have the images, just pull them with a `docker pull` command.
-
 1. Confirm the build directory is clean.
 
     ``` shell
@@ -31,7 +19,7 @@ This is why SNMP.  :)
     build-pysnmp.sh
     ```
 
-1. Then execute the docker `public.ecr.aws/lambda/python` images to run the build script.
+2. Then execute the docker `public.ecr.aws/lambda/python` images to run the build script.
 
     ``` shell
     docker run --rm -v `pwd`/build:/var/task -it --entrypoint /bin/bash public.ecr.aws/lambda/python:3.6 ./build-pysnmp.sh
